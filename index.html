@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -174,24 +174,27 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
+      <video autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/spot.mp4" type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
+    </div>
+    <div class="hero-body">
+      <video autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/materials.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
-</section> -->
+  <h2 class="subtitle has-text-centered">
+    <b>Inverse Rendering:</b> (a) PBR Color; (b) Albedo; (c) Mesh; (d) Environment Light.
+  </h2>
+</section>
 
 
-<section class="hero is-light is-small">
+
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -246,7 +249,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -288,43 +291,114 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
+    <h2 class="title is-3">Overview</h2>
+    <img alt="Overview" src="./static/images/pipeline.png" style="width: 100%;">
+  </div>
+</section>
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Novel View Synthesis</h2>
+    <img alt="Novel View Synthesis" src="./static/images/nvs.png" style="width: 100%;">
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Geometry Recovery</h2>
+    <img alt="Geomtry Recovery" src="./static/images/geometry.png" style="width: 100%;">
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Decomposition</h2>
+    <img alt="Decomposition" src="./static/images/decomp.png" style="width: 100%;">
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Relighting Demo</h2>
+    <div class="tabs is-toggle is-fullwidth">
+      <ul>
+        <li id="tab-1" onclick="tab_click1()">
+          <a>
+            <span>Spot</span>
+          </a>
+        </li>
+        <li id="tab-2" onclick="tab_click2()">
+          <a>
+            <span>Materials</span>
+          </a>
+        </li>
+        <li id="tab-3" onclick="tab_click3()">
+          <a>
+            <span>Armadillo</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="columns is-centered">
+      <div class="column content">
+        <div class="rows">
+          <div class="row content">
+            <video id="player-1-1" autoplay muted loop playsinline width="100%">
+          </div>
+          <div class="row content">
+            <video id="player-2-1" autoplay muted loop playsinline width="100%">
+          </div>
         </div>
       </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/steve.mp4"
-                      type="video/mp4">
-            </video>
+      <div class="column content">
+        <div class="rows">
+          <div class="row content">
+            <video id="player-1-2" autoplay muted loop playsinline width="100%">
           </div>
-
+          <div class="row content">
+            <video id="player-2-2" autoplay muted loop playsinline width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="column content">
+        <div class="rows">
+          <div class="row content">
+            <video id="player-1-3" autoplay muted loop playsinline width="100%">
+          </div>
+          <div class="row content">
+            <video id="player-2-3" autoplay muted loop playsinline width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="column content">
+        <div class="rows">
+          <div class="row content">
+            <video id="player-1-4" autoplay muted loop playsinline width="100%">
+          </div>
+          <div class="row content">
+            <video id="player-2-4" autoplay muted loop playsinline width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="column content">
+        <div class="rows">
+          <div class="row content">
+            <video id="player-1-5" autoplay muted loop playsinline width="100%">
+          </div>
+          <div class="row content">
+            <video id="player-2-5" autoplay muted loop playsinline width="100%">
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
     <!-- Concurrent Work. -->
     <!-- <div class="columns is-centered">
@@ -353,6 +427,16 @@
     </div> -->
     <!--/ Concurrent Work. -->
 
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3">Realistic Dataset</h2>
+    <img alt="Realistic Dataset" src="./static/images/dtu.png" style="width: 100%;">
+    <img alt="Realistic Dataset" src="./static/images/dtu-relighting.png" style="width: 100%;">
   </div>
 </section>
 
