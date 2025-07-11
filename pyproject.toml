@@ -1,0 +1,211 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["rfstudio*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.npz", "*.js", "*.css", "*.ico", "*.html", "*.svg"]
+
+[project]
+name = "rfstudio"
+version = "0.0.1"
+description = "All-in-one repository for Radiance Fields"
+# readme = "README.md"
+license = { text="Apache 2.0"}
+requires-python = ">=3.10.0"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python",
+]
+dependencies = [
+    "appdirs>=1.4.4",
+    "gsplat~=1.4.0",
+    "jaxtyping>=0.2.25",
+    "numpy~=1.26.4",
+    "open3d~=0.18.0",
+    "Pillow>=10.2.0",
+    "plotext>=5.2.8",
+    "rich>=13.7.1",
+    "ffmpegcv~=0.3.16",
+    "torch~=2.1.0",
+    "torchvision~=0.16.0",
+    "torchmetrics~=1.3.1",
+    "trimesh>=4.1.7",
+    "tyro==0.7.3",
+    "kornia>=0.8.0",
+    "nerfacc>=0.5.3",
+    "rfviser>=0.2.23",
+    "pyexr>=0.5.0",
+    "opencv-python>=4.9.0.80",
+    "huggingface-hub>=0.26.2",
+]
+
+[project.scripts]
+
+[project.entry-points."pygments.lexers"]
+pshell = "rfstudio.utils.docs.pygments:PythonShellLexer"
+psession = "rfstudio.utils.docs.pygments:PythonSessionLexer"
+
+[project.optional-dependencies]
+
+dev = [
+    "pydeps>=1.12.20",
+    "toml>=0.10.2",
+    "mypy>=1.9.0"
+]
+
+docs = [
+    "Markdown>=3.5.2",
+    "mkdocs>=1.5.3",
+    "mkdocs-open-in-new-tab>=1.0.3",
+    "mkdocs-material>=9.5.17",
+    "mkdocs-git-revision-date-localized-plugin>=1.2.4"
+]
+
+[tool.yapf]
+align_closing_bracket_with_visual_indent = false
+allow_multiline_dictionary_keys = false
+allow_multiline_lambdas = true
+allow_split_before_default_or_named_assigns = false
+allow_split_before_dict_value = false
+arithmetic_precedence_indication = false
+blank_line_before_class_docstring = true
+blank_line_before_module_docstring = false
+blank_line_before_nested_class_or_def = true
+blank_lines_around_top_level_definition = 2
+blank_lines_between_top_level_imports_and_variables = 1
+coalesce_brackets = true
+column_limit = 120
+continuation_align_style = "SPACE"
+continuation_indent_width = 4
+dedent_closing_brackets = true
+disable_ending_comma_heuristic = false
+# disable_split_list_with_comment = true
+each_dict_entry_on_separate_line = false
+force_multiline_dict = false
+i18n_comment = ""
+i18n_function_call = ""
+indent_closing_brackets = false
+indent_dictionary_value = false
+indent_blank_lines = false
+indent_width = 4
+join_multiple_lines = false
+no_spaces_around_selected_binary_operators = []
+space_between_ending_comma_and_closing_bracket = true
+space_inside_brackets = false
+spaces_around_default_or_named_assign = false
+spaces_around_dict_delimiters = true
+spaces_around_list_delimiters = false
+spaces_around_power_operator = true
+spaces_around_subscript_colon = false
+spaces_around_tuple_delimiters = false
+spaces_before_comment = [8, 16, 32, 48, 60, 72]
+split_all_comma_separated_values = false
+split_all_top_level_comma_separated_values = true
+split_arguments_when_comma_terminated = true
+split_before_arithmetic_operator = false
+split_before_bitwise_operator = false
+split_before_closing_bracket = true
+split_before_dict_set_generator = true
+split_before_dot = true
+split_before_expression_after_opening_paren = true
+split_before_first_argument = true
+split_before_logical_operator = false
+split_before_named_assigns = false
+split_complex_comprehension = true
+split_penalty_after_opening_bracket = 0
+split_penalty_after_unary_operator = 10000
+split_penalty_arithmetic_operator = 100
+split_penalty_before_if_expr = 20
+split_penalty_bitwise_operator = 300
+split_penalty_comprehension = 20
+split_penalty_excess_character = 400
+split_penalty_for_added_line_split = 0
+split_penalty_import_names = 0
+split_penalty_logical_operator = 200
+use_tabs = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = []
+
+[tool.ruff.format]
+quote-style = "single"
+line-ending = "lf"
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors.
+    "F",  # Pyflakes rules.
+    "W",  # Pyflakes rules.
+    "I",  # isort formatting.
+    "PL", # Pylint.
+    "D100",  # Missing docstring in public module.
+    "D101",  # Missing docstring in public class.
+    "D102",  # Missing docstring in public method.
+    "D103",  # Missing docstring in public function.
+    "D104",  # Missing docstring in public package.
+    "D105",  # Missing docstring in magic method.
+    "D203",  # 1 blank line required before class docstring.
+    "D204",  # 1 blank line required after class docstring.
+    "D206",  # Docstring should be indented with spaces, not tabs.
+    "D207",  # Docstring is under-indented.
+    "D208",  # Docstring is over-indented.
+    "D209",  # Multi-line docstring closing quotes should be on a separate line.
+    "D213",  # Multi-line docstring summary should start at the second line.
+    "D418",  # Function decorated with @overload shouldn't contain a docstring.
+]
+ignore = [
+    "F722",  # Forward annotation false positive from jaxtyping. Should be caught by pyright.
+    "F821",  # Forward annotation false positive from jaxtyping. Should be caught by pyright.
+    "PLR2004",  # Magic value used in comparison.
+    "PLR0915",  # Too many statements.
+    "PLR0913",  # Too many arguments.
+    "PLR0911",  # Too many return statements.
+    "PLR0912",  # Too many branches.
+    "PLW2901",  # For loop variable overwritten.
+    "PLC0414",  # Import alias does not rename original package.
+]
+dummy-variable-rgx = "^_$"
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = ["rfstudio"]
+
+[tool.pydeps]
+max_bacon = 2
+no_show = true
+output = "exports/rfstudio.svg"
+verbose = 0
+cluster = true
+
+[tool.mypy]
+modules = [
+    "tests.utils.test_typing"
+]
+python_version = "3.10"
+
+disallow_subclassing_any = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+disable_error_code = [
+    "import-untyped"
+]
+extra_checks = true
+
+show_column_numbers = true
+
+
+[[tool.mypy.overrides]]
+module = "rfstudio.*"
+
+implicit_reexport = false

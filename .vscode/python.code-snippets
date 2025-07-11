@@ -1,0 +1,76 @@
+{
+    "torch.stack": {
+        "scope": "python",
+        "prefix": "rfs-stack",
+        "body": [
+            "torch.stack(($0), dim=$1)"
+        ],
+        "description": "For torch.stack"
+    },
+    "torch.cat": {
+        "scope": "python",
+        "prefix": "rfs-cat",
+        "body": [
+            "torch.cat(($0), dim=$1)"
+        ],
+        "description": "For torch.cat"
+    },
+    "@dataclass": {
+        "scope": "python",
+        "prefix": "rfs-dataclass",
+        "body": [
+            "from dataclasses import dataclass",
+            "",
+            "@dataclass",
+            "class $1:",
+            "    $0"
+        ],
+        "description": "For dataclasses.dataclass"
+    },
+    "rfstudio: fast script": {
+        "scope": "python",
+        "prefix": "rfs-script",
+        "body": [
+            "from dataclasses import dataclass",
+            "from rfstudio.engine.task import Task",
+            "",
+            "@dataclass",
+            "class Script(Task):",
+            "",
+            "    def run(self) -> None:",
+            "        pass$0",
+            "",
+            "if __name__ == '__main__':",
+            "    Script(cuda=0).run()",
+            ""
+        ],
+        "description": "Fast generate rfstudio script"
+    },
+    "rfstudio: fast import": {
+        "scope": "python",
+        "prefix": "rfs-import",
+        "body": [
+            "from __future__ import annotations",
+            "from pathlib import Path",
+            "from typing import Tuple, List, TypeVar, Callable, Dict, Literal, Optional, Union, TypeAlias, Any",
+            "from jaxtyping import Float32, Int64, Int32, Bool",
+            "from torch import Tensor, nn",
+            "from abc import ABC, abstractmethod",
+            "from dataclasses import field, dataclass",
+            "import numpy as np",
+            "import torch",
+            "import torch.nn.functional as F",
+            "",
+            "$0"
+        ],
+        "description": "Fast generate rfstudio script"
+    },
+    "rfstudio: fast import inline": {
+        "scope": "python",
+        "prefix": "fr",
+        "body": [
+            "from rfstudio.$0"
+        ],
+        "description": "Fast generate rfstudio script"
+    }
+}
