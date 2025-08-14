@@ -1,8 +1,8 @@
-# GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering
+# GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering (ICCV 2025)
 
 #### [Project Page](https://pku-vcl-geometry.github.io/GeoSplatting/) | [arXiv Paper](http://arxiv.org/abs/2410.24204)
 
-[Kai Ye](https://illusive-chase.github.io/)\*, [Chong Gao](https://timchonggao.github.io/ChongGao.github.io/)\*, [Guanbin Li](https://www.sysu-hcp.net/faculty/liguanbin.html), [Wenzheng Chen](https://wenzhengchen.github.io/)†, [Baoquan Chen](https://baoquanchen.info/)†,
+[Kai Ye](https://illusive-chase.github.io/)\*, [Chong Gao](https://timchonggao.github.io/ChongGao.github.io/)\*, [Guanbin Li](http://guanbinli.com), [Wenzheng Chen](https://wenzhengchen.github.io/)†, [Baoquan Chen](https://baoquanchen.info/)†
 
 Welcome to the official repository for GeoSplatting! This project introduces a novel approach to inverse rendering that leverages the power of 3D Gaussian Splatting, guided by explicit geometry, to achieve state-of-the-art results in physically-based material and lighting estimation from images. By integrating a surface-based representation with the efficiency of Gaussian splats, GeoSplatting offers a robust framework for decomposing scenes into their fundamental components: geometry, materials, and lighting.
 
@@ -41,6 +41,7 @@ You'll need to download and organize the datasets to replicate the paper's exper
 #### Synthetic4Relight Dataset
 
 Download the [Synthetic4Relight Dataset](https://drive.google.com/file/d/1wWWu7EaOxtVq8QNalgs6kDqsiAm7xsRh/view?usp=sharing) provided by [InvRender](https://github.com/zju3dv/InvRender).
+Download the [GT relighting environment maps](https://github.com/zju3dv/InvRender/tree/main/code/envmaps) for the Synthetic4Relight Dataset ( `envmap*.exr` ).
 Organize the dataset as follows:
 ```
 GeoSplatting/
@@ -100,6 +101,34 @@ GeoSplatting/
  ├─ README.md
  └─ ...
 ```
+#### Shiny Blender Dataset
+Download the [Shiny Blender Dataset](https://storage.googleapis.com/gresearch/refraw360/ref.zip) provided by [Ref-NeRF](https://dorverbin.github.io/refnerf/).
+Organize the dataset as follows:
+```
+GeoSplatting/
+ ├─ data/
+ │   ├─ refnerf/
+ │   │   ├─ ball/
+ │   │   │   ├─ test/
+ │   │   │   ├─ train/
+ │   │   │   ├─ trainsforms_test.json
+ │   │   │   └─ trainsforms_train.json
+ │   │   ├─ car/
+ │   │   │   └─ ...
+ │   │   ├─ coffee/
+ │   │   │   └─ ...
+ │   │   ├─ helmet/
+ │   │   │   └─ ...
+ │   │   ├─ teapot/
+ │   │   │   └─ ...
+ │   │   └─ toaster/
+ │   │       └─ ...
+ │   └─ ...
+ ├─ rfstudio/
+ │   └─ ...
+ ├─ README.md
+ └─ ...
+```
 
 ### Training & Evaluation
 
@@ -137,7 +166,7 @@ If you find GeoSplatting useful in your research, please consider citing our pap
 
 ## 🎉 Acknowledgments & Codebase
 
-This the official implementation is developed from the internal codebase of the [Visual Computing and Learning Lab](https://vcl.pku.edu.cn/). While the core GeoSplatting code has been carefully verified, other parts of the repository are under active development and may contain temporary limitations. We plan to release a fully polished codebase in the future.
+This official implementation is developed from the internal codebase of the [Visual Computing and Learning Lab](https://vcl.pku.edu.cn/). While the core GeoSplatting code has been carefully verified, other parts of the repository are under active development and may contain temporary limitations. We plan to release a fully polished codebase in the future.
 
 Our work stands on the shoulders of giants. We are incredibly grateful to the authors of these amazing open-source projects:
 
