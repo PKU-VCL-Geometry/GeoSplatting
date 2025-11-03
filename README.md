@@ -70,7 +70,7 @@ GeoSplatting/
 ```
 #### TensorIR Synthetic Dataset
 Download the [TensoIR Synthetic Dataset](https://zenodo.org/record/7880113#.ZE68FHZBz18) provided by [TensoIR](https://github.com/Haian-Jin/TensoIR).
-Download the [GT relighting environment maps](https://zenodo.org/record/7880113#.ZE68FHZBz18) for the TensorIR Synthetic Dataset.
+Download the [GT relighting environment maps](https://drive.google.com/file/d/10WLc4zk2idf4xGb6nPL43OXTTHvAXSR3/view?usp=share_link) for the TensorIR Synthetic Dataset.
 Organize the dataset as follows:
 ```
 GeoSplatting/
