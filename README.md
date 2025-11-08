@@ -156,11 +156,12 @@ For direct incorporation of MGAdaptor, please refer to `rfstudio/model/geosplat.
 If you find GeoSplatting useful in your research, please consider citing our paper.
 
 ```bibtex
-@article{ye2024geosplatting,
-  title={GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering},
+@inproceedings{ye2025geosplatting,
+  title={Geosplatting: Towards geometry guided gaussian splatting for physically-based inverse rendering},
   author={Ye, Kai and Gao, Chong and Li, Guanbin and Chen, Wenzheng and Chen, Baoquan},
-  journal={arXiv preprint arXiv:2410.24204},
-  year={2024}
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={28991--29000},
+  year={2025}
 }
 ```
 
