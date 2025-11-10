@@ -4,7 +4,11 @@
 
 [Kai Ye](https://illusive-chase.github.io/)\*, [Chong Gao](https://timchonggao.github.io/ChongGao.github.io/)\*, [Guanbin Li](http://guanbinli.com), [Wenzheng Chen](https://wenzhengchen.github.io/)†, [Baoquan Chen](https://baoquanchen.info/)†
 
+
 Welcome to the official repository for GeoSplatting! This project introduces a novel approach to inverse rendering that leverages the power of 3D Gaussian Splatting, guided by explicit geometry, to achieve state-of-the-art results in physically-based material and lighting estimation from images. By integrating a surface-based representation with the efficiency of Gaussian splats, GeoSplatting offers a robust framework for decomposing scenes into their fundamental components: geometry, materials, and lighting.
+
+![teaser](assets/teaser.jpg)
+![pipeline](assets/pipeline.jpg)
 
 ## 🚀 Getting Started
 
